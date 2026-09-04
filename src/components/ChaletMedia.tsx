@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PlaceholderPlate } from "@/components/PlaceholderPlate";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/basePath";
 
 // Fills its positioned parent with either the real photo (when one exists
 // on disk) or the art-directed placeholder plate. One switch point for the
@@ -27,7 +28,7 @@ export function ChaletMedia({
   if (src) {
     return (
       <Image
-        src={src}
+        src={withBasePath(src)}
         alt={alt}
         fill
         priority={priority}

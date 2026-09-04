@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/nav/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MotionProvider } from "@/components/MotionProvider";
 import { site } from "@/data/site";
+import { withBasePath } from "@/lib/basePath";
 
 const elMessiri = El_Messiri({
   variable: "--font-el-messiri",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     description: site.description,
   },
   icons: {
-    icon: "/logo.png",
+    icon: withBasePath("/logo.png"),
   },
 };
 

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, site } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/basePath";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link href="/" className="relative z-10 flex items-center gap-2" onClick={() => setOpen(false)}>
           <Image
-            src="/logo.png"
+            src={withBasePath("/logo.png")}
             alt={site.fullName}
             width={745}
             height={526}

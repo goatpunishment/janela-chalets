@@ -3,6 +3,7 @@ import Link from "next/link";
 import { chalets } from "@/data/chalets";
 import { contact, nav, site } from "@/data/site";
 import { Reveal } from "@/components/ui/Reveal";
+import { withBasePath } from "@/lib/basePath";
 
 function TikTokIcon() {
   return (
@@ -32,7 +33,7 @@ export function SiteFooter() {
           <div className="flex flex-col items-start gap-10 border-b border-coconut/10 pb-16 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <Image
-                src="/logo.png"
+                src={withBasePath("/logo.png")}
                 alt={site.fullName}
                 width={745}
                 height={526}

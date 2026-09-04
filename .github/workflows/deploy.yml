@@ -25,6 +25,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # GitHub Pages project site (no custom domain yet) is served at
+          # https://<user>.github.io/janela-chalets/ — every asset/link
+          # must be prefixed with this subpath. Delete this `env:` block
+          # once a custom domain is attached to the Pages site, so the
+          # build goes back to root-relative paths.
+          NEXT_BASE_PATH: /janela-chalets
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

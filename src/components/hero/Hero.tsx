@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { site } from "@/data/site";
 import { Coconut, usePointerParallax } from "@/components/hero/Coconut";
+import { withBasePath } from "@/lib/basePath";
 
 function LeafSilhouette({ className, flip }: { className?: string; flip?: boolean }) {
   return (
@@ -99,7 +100,7 @@ export function Hero() {
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         >
           <Image
-            src="/logo.png"
+            src={withBasePath("/logo.png")}
             alt={site.fullName}
             width={745}
             height={526}
